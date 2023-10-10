@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escaping the Matrix with Tava</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Escaping the Matrix with Tava</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a id="vault-link" href="#">The Vault</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section>
+            <h2>Welcome to "Escaping the Matrix with Tava"</h2>
+            <p>This is the main content section of your website.</p>
+        </section>
+    </main>
+
+    <div id="vault-access">
+        <p>Accessing Vault...</p>
+    </div>
+
+    <footer>
+        &copy; 2023 Escaping the Matrix with Tava
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+/* Reset some default styles to ensure consistency across browsers */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Style the header */
+header {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Style the navigation bar */
+nav {
+    background-color: #333;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
+
+nav li {
+    margin: 0 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #fff;
+    cursor: pointer;
+}
+
+/* Style the main content */
+main {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Style the footer */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+}
+
+/* Style the "Accessing Vault" message */
+#vault-access {
+    display: none;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1;
+}
+// JavaScript to show "Accessing Vault" message when clicking "The Vault" link
+const vaultLink = document.getElementById("vault-link");
+const vaultAccess = document.getElementById("vault-access");
+
+vaultLink.addEventListener("click", () => {
+    vaultAccess.style.display = "block";
+    setTimeout(() => {
+        vaultAccess.style.display = "none";
+    }, 3000); // Hide the message after 3 seconds (adjust as needed)
+});
